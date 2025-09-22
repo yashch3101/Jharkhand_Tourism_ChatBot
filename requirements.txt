@@ -4,4 +4,3 @@ numpy
 pandas
 gunicorn
 flask_cors
-googletrans==4.0.0-rc1
