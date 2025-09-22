@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import pickle
 from sklearn.metrics.pairwise import cosine_similarity
 import os
@@ -8,6 +9,7 @@ with open("chatbot.pkl", "rb") as f:
     vectorizer, model, df = pickle.load(f)
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route("/chat", methods=["POST"])
 def chat():
