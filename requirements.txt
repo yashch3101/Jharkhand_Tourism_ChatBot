@@ -5,3 +5,4 @@ pandas
 gunicorn
 flask_cors
 googletrans==4.0.0-rc1
+httpx==0.27.0
