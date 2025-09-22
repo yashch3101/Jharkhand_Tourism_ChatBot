@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 import pickle
 from sklearn.metrics.pairwise import cosine_similarity
+import os
 
 # Load tuple data (vectorizer, model, df)
 with open("chatbot.pkl", "rb") as f:
@@ -28,4 +29,5 @@ def chat():
     })
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
